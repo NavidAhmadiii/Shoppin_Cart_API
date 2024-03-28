@@ -132,7 +132,6 @@ class CreateOrderSerializer(serializers.Serializer):
             raise serializers.ValidationError('The cart is empty.')
         return cart_id
 
-
     def save(self, **kwargs):
         with transaction.atomic():
             cart_id = self.validated_data['cart_id']
